@@ -1,12 +1,16 @@
 <div id="body-container">
     <div id="flowers_panel">
+        <% if(plants) { %>
         <% plants.forEach( plant => { %>
             <div id="plant_<%= plant.id %>">
-                <img src="<%= plant.image %>"><br/>
+                <img src="<%= plant.image %>" class="plant_image"><br/>
                 Nazwa: <%= plant.name %><br/>
                 Typ: <%= plant.type %>
                 <hr>
             </div>
         <% }) %>
+        <% } else { %>
+           No plants found
+        <% }%>
     </div>
 </div>
