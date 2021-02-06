@@ -63,7 +63,7 @@ module.exports.routes = {
   // 'POST  /api/v1/deliver-contact-form-message': {action: 'deliver-contact-form-message'},
 
 
-  'GET /web/homepage': 'UserController.GetUserData',
+  'GET /web/home': 'UserController.GetUserData',
 
   'GET /web/flowers': 'PlantController.GetUserPlants',
 
