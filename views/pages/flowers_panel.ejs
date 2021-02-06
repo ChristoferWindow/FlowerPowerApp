@@ -1,0 +1,12 @@
+<div id="body-container">
+    <div id="flowers_panel">
+        <% plants.forEach( plant => { %>
+            <div id="plant_<%= plant.id %>">
+                <img src="<%= plant.image %>"><br/>
+                Nazwa: <%= plant.name %><br/>
+                Typ: <%= plant.type %>
+                <hr>
+            </div>
+        <% }) %>
+    </div>
+</div>
