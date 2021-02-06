@@ -1,55 +1,57 @@
-<div class="container text-center">
+<div id="form-container" class="container text-center ">
     <form action="/plant" method="post">
         <div class="form-row row">
             <div class="form-group col">
                 <label for="image">Link do zdjęcia</label>
-                <input class="form-control" id="image" type="text" name="image">
+                <input class="form-control" id="image" type="text" name="image" required=required>
             </div>
+        </div>
+        <div class="form-group">
+            <label for="port_color">Kolor portu</label>
+            <select class="form-control" id="port_color" type="text" name="port_color" required=required>
+                <option value="czerwony">czerwony</option>
+                <option value="czerwony">zielony</option>
+                <option value="czerwony">niebieski</option>
+            </select>
             <div class="form-group col">
                 <label for="image">Robot</label>
                 <% if(robots) { %>
-                <select id="robotId" name="robotId">
+                    <select id="robotId" class="form-control" name="robotId" required=required>
                         <% robots.forEach( robot => { %>
-                            <option value="<%= robot.id ;%>" id="robot_<%= robot.id ;%>">
-                                <%= robot.name ;%>
+                            <option value="<%= robot.id; %>" id="robot_<%= robot.id; %>">
+                                <%= robot.name; %>
                             </option>
-                        <% }); %>
-
-                </select>
-                <% } else {%>
-                    <input id="robotId" type="number" name="robotId">
-                <% }%>
-
-
-                <input class="form-control" id="robotId" type="text" name="robotId">
-                <label for="port_color">Kolor portu</label>
-                <input class="form-control" id="port_color" type="text" name="port_color">
+                        <% }) %>
+                    </select>
+                <% } %>
             </div>
         </div>
         <div class="form-group">
             <label for="name">Nazwa rośliny</label>
-            <input class="form-control" id="name" type="text" name="name">
+            <input class="form-control" id="name" type="text" name="name" required=required>
         </div>
         <div class="form-group">
             <label for="place">Miejsce położenia</label>
-            <input class="form-control" id="place" type="text" name="place">
+            <input class="form-control" id="place" type="text" name="place" required=required>
         </div>
         <div class="form-group">
             <label for="type">Gatunek/typ</label>
-            <input class="form-control" id="type" type="text" name="type">
+            <input class="form-control" id="type" type="text" name="type" required=required>
         </div>
         <div class="form-row row">
             <div class="col">
                 <label for="min_water">min. nawodnienie</label>
-                <input class="form-control" id="min_water" type="text" name="min_water">
+                <input class="form-control" id="min_water" type="text" name="min_water" required=required>
             </div>
             <div class="col">
                 <label for="max_water">max. nawodnienie</label>
-                <input class="form-control" id="max_water" type="text" name="max_water">
+                <input class="form-control" id="max_water" type="text" name="max_water" required=required>
             </div>
         </div>
         <input type="hidden" name="_csrf" value="<%- _csrf; %>"/>
         </br>
         <input id="create_button" class="btn btn-primary text-center" type="submit" placeholder="Stwórz">
     </form>
+    </br>
+    </br>
 </div>

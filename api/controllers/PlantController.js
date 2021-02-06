@@ -19,8 +19,9 @@ module.exports = {
     });
   },
   GetCreatePlantForm: async function (req, res) {
-    // let user = await User.find({name: 'Wojtek'}); // TODO:Make is dynamic
-    let robots = Robot.find({id: 1});
+    let user = await User.find({name: 'Wojtek'}); // TODO:Make is dynamic
+    let robots = await Robot.find({userId: user[0].id});
+    console.log(robots);
     res.view('pages/plant_create', {viewPageTitle: 'Nowa roślina', robots: robots});
   },
 
