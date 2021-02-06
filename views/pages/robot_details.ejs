@@ -1,0 +1,38 @@
+<div id="body-container">
+    <div id="flowers_panel">
+        <% if(robot) { %>
+            <div id="body_header">
+                <img class="plant_image" src="<%= robot.image %>"/><br/>
+                Nazwa: <%= robot.name %><br/>
+                Lokalizacja: <%= robot.location %><br/>
+                <br/>
+                Szczegóły
+            </div>
+            <div id="details">
+                <hr>
+                Zajęte porty: (tu z bazy wyciągnąć)/(tu też)<br/>
+                UUID: <%= robot.uuid %><br/>
+                IFWI: v1.0.0.0<br/>
+                <br/>
+            </div>
+            <div id="connected_flowers">
+                Podpięte rośliny
+                <hr>
+                <% if(plants) { %>
+                    <% plants.forEach( plant => { %>
+                        <div id="plant_panel">
+                            <img class="plant_image" src="<%= plant.image %>"/>
+                            Nazwa: <%= plant.name %><br/>
+                            Typ: <%= plant.type %>
+                            <hr>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    No plants found
+                <% }%>
+            </div>
+        <% } else { %>
+            Robot not found
+        <% }%>
+    </div>
+</div>

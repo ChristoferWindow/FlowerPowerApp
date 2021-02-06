@@ -66,9 +66,13 @@ module.exports.routes = {
   'GET /web/homepage': 'UserController.GetUserData',
 
   'GET /web/flowers': 'PlantController.GetUserPlants',
+
   'GET /web/flowers/create': 'PlantController.GetCreatePlantForm',
+
   'POST /web/flowers/save': 'PlantController.Save',
 
   'GET /web/robots': 'RobotController.GetUserRobots',
+
+  'GET /web/robots/:robotId': 'RobotDetailsController.GetRobotDetails'
 
 };
