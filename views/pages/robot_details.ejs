@@ -20,12 +20,14 @@
                 <hr>
                 <% if(plants) { %>
                     <% plants.forEach( plant => { %>
-                        <div id="plant_panel">
-                            <img class="plant_image" src="<%= plant.image %>"/>
-                            Nazwa: <%= plant.name %><br/>
-                            Typ: <%= plant.type %>
-                            <hr>
-                        </div>
+                        <a href="/web/flowers/<%= plant.id %>">
+                            <div id="plant_panel">
+                                <img class="plant_image" src="<%= plant.image %>"/>
+                                Nazwa: <%= plant.name %><br/>
+                                Typ: <%= plant.type %>
+                                <hr>
+                            </div>
+                        </a>
                     <% }) %>
                 <% } else { %>
                     No plants found
