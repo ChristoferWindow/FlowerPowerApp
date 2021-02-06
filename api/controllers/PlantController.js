@@ -17,6 +17,19 @@ module.exports = {
     res.view("pages/flowers_panel", {
       plants: plants
     });
+  },
+  GetCreatePlantForm: async function (req, res) {
+    res.view('pages/robot_create');
+  },
+
+  Save: async function (req, res) {
+    Plant.create({
+        robotId: req.robot,
+        name: req.name,
+        type: req.type,
+        image: req.image,
+    });
+    return 'success';
   }
 };
 

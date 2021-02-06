@@ -1,5 +1,6 @@
 <div id="body-container">
     <div id="flowers_panel">
+        <% if(plants) { %>
         <% plants.forEach( plant => { %>
             <div id="plant_<%= plant.id %>">
                 <img src="<%= plant.image %>"><br/>
@@ -8,5 +9,8 @@
                 <hr>
             </div>
         <% }) %>
+        <% } else { %>
+           No plants found
+        <% }%>
     </div>
 </div>
