@@ -21,6 +21,18 @@ module.exports = {
       type: 'string',
       required: true
     },
+    name: {
+      type: 'string',
+      required: true
+    },
+    location: {
+      type: 'string',
+      required: true
+    },
+    image: {
+      type: 'string',
+      required: true
+    },
     createdAt: {
       type: 'ref',
       columnType: 'datetime',

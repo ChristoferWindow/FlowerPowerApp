@@ -13,6 +13,7 @@ module.exports = {
     robotId : {type: 'number', required: true},
     name : {type: 'string', required: true},
     type : {type: 'string', required: true},
+    image : {type: 'string', required: true},
     createdAt: {type: 'ref', columnType: 'datetime', autoCreatedAt: true,},
     updatedAt: {type: 'ref', columnType: 'datetime', autoUpdatedAt: true,},
   },
