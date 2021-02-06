@@ -1,0 +1,21 @@
+<div id="body-container">
+    <div id="profile_panel">
+        <img src="<%= user_image %>" />
+        Witaj <%= user_name %>!
+        <hr>
+    </div>
+    <div id="last_action_panel">
+        Ostatnie akcje: <br />
+        - Podlano kwiat (nazwa kwiatu z bazy) o godz. (godzina z bazy)
+        - Uzupełniono wodę o (tutaj zależy od czasu) dnia (to samo)
+        <br />
+        <br />
+        <br />
+        <br /> <!-- Tu 4x <br /> bo domyślnie aplikacja będzie mogła pokazać ~5-6 ostatnich akcji -->
+        <hr>
+    </div>
+    <div id="statistics_panel">
+        Ostatnie logowanie: (Tu z bazy. Można po "updatedAt" lub po prostu dodać nowe pole w bazie)<br />
+        Twoje kwiaty są w świetnym humorze, o wiele lepsze niż u sąsaida. :)
+    </div>
+</div>
