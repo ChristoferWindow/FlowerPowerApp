@@ -2,7 +2,7 @@
 <html>
 <head>
     <% if(typeof viewPageTitle !== 'undefined') { %>
-        <title><%= viewPageTitle ;%> | FlowerPower</title>
+        <title><%= viewPageTitle; %> | FlowerPower</title>
     <% } else { %>
         <title>FlowerPower</title>
     <% } %>
@@ -10,13 +10,13 @@
     <% /* Viewport tag for sensible mobile support */ %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <% /* Script tags should normally be included further down the page- but any
+    <% /* Script tags should normally be included further down the page- but any
     scripts that load fonts (e.g. Fontawesome ≥v5) are special exceptions to the
     rule. (Include them up here along with any hard-coded «link» tags for Typekit,
     Google Fonts, etc. - above the «body» to prevent the page flickering when fonts
     load.) */ %>
 
-  <% /* Certain scripts, normally analytics tools like Google Tag Manager and
+    <% /* Certain scripts, normally analytics tools like Google Tag Manager and
     Google Analytics, should only be included in production: */
     if (sails.config.environment === 'production') { %>
         <!-- Google Analytics, Google Tag Manager, etc. -->
@@ -31,7 +31,9 @@
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
         }
-
+        #page-wrap {
+            margin-bottom: 30px;
+        }
         .navbar-bottom {
             overflow: hidden;
             position: fixed;
@@ -67,12 +69,15 @@
             background-color: white;
             text-align: center;
         }
-        #form-container {
-            margin-bottom: 30px;
-        }
+
         option {
             text-align: center;
         }
+
+        .plant_image {
+            width: 100%;
+        }
+
 
 
     </style>
@@ -101,28 +106,27 @@
 <div class="bs-docs-example">
     <div class="pos-f-t">
         <nav class="navbar navbar-dark bg-dark justify-content-center">
-            <!--            <button class="navbar-toggler" type="button" data-toggle="collapse"-->
-            <!--                    data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"-->
-            <!--                    aria-expanded="false" aria-label="Toggle navigation">-->
-            <!--                <span class="navbar-toggler-icon"></span>-->
-            <!--            </button>-->
+
             <a class="navbar-brand navbar-text  text-center" href="/web/home">
+                FlowerPower
             </a>
         </nav>
     </div>
     <div id="page-wrap">
         <% if(typeof viewPageTitle !== 'undefined') { %>
-            <h1 class="text-center"><%= viewPageTitle ;%></h1>
+            <h1 class="text-center"><%= viewPageTitle; %></h1>
         <% } %>
         </br>
-        <%- body; %>
+        <div class="container">
+            <%- body; %>
+        </div>
     </div>
 
     <div class=" text-center navbar-bottom justify-content-center">
         <a href="/web/home" class="active"><img src="/images/home.svg" width="35" height="35"></a>
         <a href="/web/flowers"><img src="/images/flower.svg" width="35" height="35"></a>
-        <a href="/web/robot"><img src="/images/robot.svg" width="35" height="35"></a>
-        <a href="/web/user"><img src="/images/user.svg" width="35" height="35"></a>
+        <a href="/web/robots"><img src="/images/robot.svg" width="35" height="35"></a>
+        <a href="/web/users"><img src="/images/user.svg" width="35" height="35"></a>
     </div>
 </div>
 </body>

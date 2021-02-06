@@ -3,7 +3,7 @@
         <% if(plants) { %>
         <% plants.forEach( plant => { %>
             <div id="plant_<%= plant.id %>">
-                <img src="<%= plant.image %>"><br/>
+                <img src="<%= plant.image %>" class="plant_image"><br/>
                 Nazwa: <%= plant.name %><br/>
                 Typ: <%= plant.type %>
                 <hr>
