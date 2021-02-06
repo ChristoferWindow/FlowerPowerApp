@@ -71,8 +71,10 @@ module.exports.routes = {
 
   'POST /web/flowers/save': 'PlantController.Save',
 
+  'GET /web/flowers/:plantId': 'PlantDetailsController.GetPlantDetails',
+
   'GET /web/robots': 'RobotController.GetUserRobots',
 
-  'GET /web/robots/:robotId': 'RobotDetailsController.GetRobotDetails'
+  'GET /web/robots/:robotId': 'RobotDetailsController.GetRobotDetails',
 
 };

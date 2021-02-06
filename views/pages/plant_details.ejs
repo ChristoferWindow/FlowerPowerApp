@@ -1,0 +1,53 @@
+<div id="body-container">
+    <div id="flowers_panel">
+        <% if(plant) { %>
+            <div id="body_header">
+                <img class="plant_image" src="<%= plant.image %>"/><br/>
+                Nazwa: <%= plant.name %><br/>
+                Lokalizacja: <%= plant.type %><br/>
+                <br/>
+                Trivia
+            </div>
+            <div id="details">
+                <hr>
+                (Tu wypisać Trivia z bazy danych)
+                <br/>
+                <br/>
+            </div>
+            <div id="plant_statistics">
+                Statystyki
+                <hr>
+                <ul>
+                    <% plantdata.forEach( data => { %>
+                        <li>Kwiat o godzinie <%= data.createdAt %>
+                        <% if( data.value == 1){ %>
+                            miał odpowiednią ilość wody.
+                        <% } else { %>
+                            został podlany przez robota.
+                        <% } %>
+                            <br/>
+                    <% })%>
+                </ul>
+                <br/>
+            </div>
+            <div id="connected_flowers">
+                Podpięty robot
+                <hr>
+                <% if(robots) { %>
+                        <a href="/web/robots/<%= robots.id %>">
+                                <div id="plant_panel">
+                                <img class="plant_image" src="<%= robots.image %>"/>
+                                Nazwa: <%= robots.name %><br/>
+                                Typ: <%= robots.location %>
+                                <hr>
+                            </div>
+                        </a>
+                <% } else { %>
+                    No robots found
+                <% }%>
+            </div>
+        <% } else { %>
+            Robot not found
+        <% }%>
+    </div>
+</div>

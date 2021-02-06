@@ -2,12 +2,14 @@
     <div id="flowers_panel">
         <% if(robots) { %>
             <% robots.forEach( robot => { %>
-                <div id="plant_<%= robot.id %>">
-                    <img class="plant_image" src="<%= robot.image %>"><br/>
-                    Nazwa: <%= robot.name %><br/>
-                    Typ: <%= robot.location %>
-                    <hr>
-                </div>
+                <a href="/web/robots/<%= robot.id %>">
+                    <div id="plant_<%= robot.id %>">
+                        <img class="plant_image" src="<%= robot.image %>"><br/>
+                        Nazwa: <%= robot.name %><br/>
+                        Typ: <%= robot.location %>
+                        <hr>
+                    </div>
+                </a>
             <% }) %>
             <% } else { %>
                 No robots found
